@@ -7,47 +7,20 @@
 
 <link rel="stylesheet" type="text/css" href="css/bulma.css">
 <link rel="stylesheet" type="text/css" href="css/style.css">
-<link rel="stylesheet" type="text/css" href="css/Icomoon/style.css">
 <body>
 	<div id="app" v-cloak class="container">
-		<loader  ref="load"></loader>
-
-		{{ reverseMessage }}
-
-		<input type="text" v-model="newUser">
-
-		<input type="submit" :title="message" value="Add User" @click="addUser">
-
-		<button @click="$refs.load.toogleLoading()">Load Page</button>
 
 		<div>
-			<ul>
-				<li v-for="user in users"> {{ user }}</li>
-			</ul>
+			<coupon @applied="onCouponApplied"></coupon>
 		</div>
 
-		<div>
-			<task-list></task-list>
-		</div>
+		<h3 v-if="couponApplied">Header is here</h3>
 
-		<div class="container">
-			<message title="Test Message" body="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum."></message>
-
-			<message title="Hello Message" body="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. "></message>
-		</div>
+		<button @click="fire">Mother to child</button>
 
 
 	</div>
 
-	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/vue.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
 
